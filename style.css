@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
 :root {
   --color-dark-grayish-blue: hsl(217, 19%, 35%);
   --color-desaturated-dark-blue: hsl(214, 17%, 51%);
@@ -27,31 +29,159 @@ body {
   align-content: center;
   min-height: calc(100% - 30px);
   max-width: 1200px;
+  margin: auto;
 }
 .card {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  align-content: center;
+
+  width: 57.9%;
+  background: white;
+
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.15);
 }
+
 .card-img > img {
-  height: 250px;
-  width: 250px;
+  height: 45vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.card-content {
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 20px;
+  color: var(--color-dark-grayish-blue);
+  padding-bottom: 35px;
+  line-height: 20px;
+}
+.card-description {
+  line-height: 20px;
+  color: var(--color-desaturated-dark-blue);
+  padding-bottom: 35px;
+  font-size: 15px;
 }
 
 .card-details {
   display: flex;
   flex-direction: row;
+  padding-top: 0px;
+}
+.card-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  overflow: hidden;
 }
 .card-avatar > img {
-  height: 40px;
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
 }
+
+.card-author {
+  margin-left: 16px;
+}
+
+.card-author > h4 {
+  font-size: 14px;
+  color: var(--color-dark-grayish-blue);
+}
+.card-author > p {
+  margin-top: 2px;
+  color: var(--color-grayish-blue);
+}
+.card .card-content .card-details .card-share {
+  margin-left: auto;
+  position: relative;
+}
+
+.card .card-content .card-details .card-share .button {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: var(--color-desaturated-dark-blue);
+}
+
+.card .card-content .card-details .card-share .button:active,
+.card .card-content .card-details .card-share .button:focus {
+  outline: none;
+}
+
+.card .card-content .card-details .card-share .button:active {
+  background-color: var(--color-dark-grayish-blue);
+}
+
+.card .card-content .card-details .card-share .popup-share {
+  visibility: hidden;
+  background-color: var(--color-dark-grayish-blue);
+  color: var(--color-white);
+  width: 330px;
+  height: 75px;
+  position: absolute;
+  top: -95px;
+  left: -148px;
+  padding: 8px 0;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card .card-content .card-details .card-share .popup-share.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.card .card-content .card-details .card-share .popup-share::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--color-dark-grayish-blue) transparent transparent
+    transparent;
+}
+
+.card .card-content .card-details .card-share .popup-share span {
+  font-size: 14px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0 10px;
+}
+
+.card .card-content .card-details .card-share .popup-share .popup-icons a {
+  display: inline-block;
+}
+
+.card .card-content .card-details .card-share .popup-share .popup-icons a img {
+  height: 30px;
+  width: 30px;
+  margin: 0 15px;
+}
+
 .attribution {
-  font-size: 11px;
+  height: 30px;
+
+  padding: 5px 0;
+  font-size: 16px;
   text-align: center;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-blue);
 }
